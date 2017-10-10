@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        .error{color:red}
+    </style>
+    <body>
+        <form action="/" method="post">
+            <h1>Sign up for God's Green Acres</h1>
+            <label> User Name:
+                <input name="user_name" type="text" value='{{user_name}}'/>
+            </label>
+            <p class = "error">{{user_name_error}}</p>
+            <label>Password:
+                <input name="password" type="password" value='{{password}}'/>
+            </label>
+            <p class = "error">{{password_error}}</p>
+            <label>Re-enter Password:
+                <input name ="verify_pw" type="password" value='{{verify_pw}}'/>
+            <p class = "error">{{verify_pw_error}}</p>
+            <label>E-mail address:
+                <input name = "e_mail" type="text" value='{{e_mail}}'/>
+            <p class = "error">{{e_mail_error}}</p>
+            <input type ="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
+<!doctype html>
+

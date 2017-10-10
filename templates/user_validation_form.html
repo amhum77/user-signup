@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        .error{color:red}
+    </style>
+</head>
+<body>
+ 
+    <h1>Validate User</h1>
+    <form method='POST'>
+        <label>User Name
+            <input name="user_name" type="text" value='{{user_name}}'/>
+        </label>
+        <p class="error">{{user_name_error}}</p>
+        <label>Password
+                <input name="password" type="password" value='{{password}}'/>
+        </label>
+        <p class="error">{{password_error}}</p>
+        <label>Verify Password
+            <input name="verify_pw" type = "text" value = '{{verify_pw}}'/>
+        </label>
+        <input type="submit" value="Validate"/>
+    </body>
+</html>
