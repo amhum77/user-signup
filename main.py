@@ -28,6 +28,12 @@ def count_email_sign(email_entry, email_sign):
     else:
         return True
 
+def test_email_entry(email_entry):
+    if email_entry == '':
+        return False
+    else:
+        return True
+
 @app.route("/", methods=['POST'])
 def validate_user():
     user_name = request.form['user_name']
@@ -56,12 +62,16 @@ def validate_user():
     if has_spaces(password):
         pw_space_error = 'Spaces are not valid'
 
-    if has_spaces(e_mail):
-        email_space_error = 'Spaces are not valid'
-    if len(e_mail) > 20 or len(e_mail) < 3:
-        email_range_error = "password out of range (3-20)"
-    if count_email_sign(e_mail, ".") or count_email_sign(e_mail,"@"):
-        email_sign_error = 'e_mail address must contain a single . and @ symbol.'
+    if test_email_entry(e_mail):
+        if has_spaces(e_mail):
+            email_space_error = 'Spaces are not valid'
+        if len(e_mail) > 20 or len(e_mail) < 3:
+            email_range_error = "password out of range (3-20)"
+        if count_email_sign(e_mail, ".") or count_email_sign(e_mail,"@"):
+            email_sign_error = 'e_mail address must contain a single . and @ symbol.'
+    else:
+        e_mail = e_mail
+    
 
     if pw_range_error or pw_space_error or pw_match_error or email_range_error or email_sign_error or email_space_error or name_range_error or name_space_error:
         password = ''
