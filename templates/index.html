@@ -10,17 +10,27 @@
             <label> User Name:
                 <input name="user_name" type="text" value='{{user_name}}'/>
             </label>
-            <p class = "error">{{user_name_error}}</p>
+            <p class = "error"style="display:inline-block;">{{name_space_error}}</p>
+            <p class = "error"style="display:inline-block;">{{name_range_error}}</p>
+            </br>  
             <label>Password:
                 <input name="password" type="password" value='{{password}}'/>
             </label>
-            <p class = "error">{{password_error}}</p>
+            <p class = "error"style="display:inline-block;">{{pw_space_error}}</p>
+            <p class = "error"style="display:inline-block;">{{pw_range_error}}</p>
+            <p class = "error"style="display:inline-block;">{{pw_match_error}}</p>
+            </br>
             <label>Re-enter Password:
                 <input name ="verify_pw" type="password" value='{{verify_pw}}'/>
-            <p class = "error">{{verify_pw_error}}</p>
+            </label>
+            <p class = "error"style="display:inline-block;">{{verify_pw_error}}</p>
+            </br>
             <label>E-mail address:
                 <input name = "e_mail" type="text" value='{{e_mail}}'/>
-            <p class = "error">{{e_mail_error}}</p>
+                <p class = "error"style="display:inline-block;">{{email_space_error}}</p>
+                <p class = "error"style="display:inline-block;">{{email_range_error}}</p>
+                <p class = "error"style="display:inline-block;">{{email_sign_error}} </p>
+            </br>
             <input type ="submit" value="Submit"/>
         </form>
     </body>
